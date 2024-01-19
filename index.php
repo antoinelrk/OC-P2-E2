@@ -1,7 +1,6 @@
 <?php
-$artworks = require './oeuvres.php';
+    $artworks = require './oeuvres.php';
 ?>
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -13,12 +12,12 @@ $artworks = require './oeuvres.php';
     <title>The ArtBox</title>
 </head>
 <body>
-    <?php include('./header.php') ?>
+    <?php include ('./header.php'); ?>
     <main>
         <div id="liste-oeuvres">
             <?php foreach($artworks as $artwork): ?>
                 <article class="oeuvre">
-                    <a href="oeuvre-<?= $artwork['id'] ?>.html">
+                    <a href="oeuvre.php?id=<?= $artwork['id'] ?>">
                         <img src="<?= $artwork['image_src'] ?>" alt="<?= $artwork['image_alt'] ?>">
                         <h2><?= $artwork['title'] ?></h2>
                         <p class="description"><?= $artwork['artist'] ?></p>
@@ -27,6 +26,6 @@ $artworks = require './oeuvres.php';
             <?php endforeach ?>
         </div>
     </main>
-    <?php include('./footer.php') ?>
+    <?php include('./footer.php'); ?>
 </body>
 </html>
